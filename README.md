@@ -10,7 +10,7 @@
 ## 使用
 
 1. 本仓库地址：<https://github.com/2252031668/openclash-two-subscriptions>。
-2. 在 OpenClash「覆写设置 → 覆写模块」中新增 HTTP 模块，填入模块 Raw 地址：<https://raw.githubusercontent.com/2252031668/openclash-two-subscriptions/47aff3b21cfc8db99841a844efd29136ba725b1c/module/openclash-two-subscriptions.conf>。
+2. 在 OpenClash「覆写设置 → 覆写模块」中新增 HTTP 模块，填入模块 Raw 地址：<https://raw.githubusercontent.com/2252031668/openclash-two-subscriptions/106fb13d54da6a493978577f539c60fe35f3b23a/module/openclash-two-subscriptions.conf>。
 4. 设置模块变量：
 
 ```text
