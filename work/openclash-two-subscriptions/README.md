@@ -9,9 +9,8 @@
 
 ## 使用
 
-1. 将本仓库发布为公开 GitHub 仓库。
-2. 用仓库提交 SHA 替换模块 URL 中的 `OWNER` 和 `COMMIT`。
-3. 在 OpenClash「覆写设置 → 覆写模块」中新增 HTTP 模块，填入模块 Raw 地址。
+1. 本仓库地址：<https://github.com/2252031668/openclash-two-subscriptions>。
+2. 在 OpenClash「覆写设置 → 覆写模块」中新增 HTTP 模块，填入模块 Raw 地址：<https://raw.githubusercontent.com/2252031668/openclash-two-subscriptions/d5f473c9b4cd2d0750f7f27f88c5ccf98c0ec5b7/module/openclash-two-subscriptions.conf>。
 4. 设置模块变量：
 
 ```text
