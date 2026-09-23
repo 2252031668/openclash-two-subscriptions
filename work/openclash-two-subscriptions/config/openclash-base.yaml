@@ -1,0 +1,81 @@
+mixed-port: 7890
+allow-lan: true
+bind-address: '*'
+mode: rule
+log-level: info
+external-controller: 127.0.0.1:9090
+unified-delay: true
+tcp-concurrent: true
+
+proxy-providers:
+  cheap:
+    type: http
+    url: ""
+    path: ./proxy_provider/cheap.yaml
+    interval: 172800
+    health-check:
+      enable: false
+
+  premium_ai:
+    type: http
+    url: ""
+    path: ./proxy_provider/premium_ai.yaml
+    interval: 172800
+    health-check:
+      enable: false
+
+proxy-groups:
+  - name: "🚀 一分机场自动"
+    type: url-test
+    use:
+      - cheap
+    filter: '^(🇯🇵日本专线-0\.1倍率|🇯🇵日本专线2-0\.1倍率|🇯🇵日本专线3-0\.1倍率|🇺🇸美国凤凰城专线-0\.1倍率|🇺🇸美国凤凰城专线2-0\.1倍率|🇺🇸美国凤凰城专线3-0\.1倍率|🇺🇸美国ai解锁-0\.1倍率|🇺🇸美国纽约-0\.01倍率|🇸🇬新加坡专线|🇸🇬新加坡专线2|🇸🇬新加坡专线3|🇭🇰香港家宽专线)$'
+    url: https://www.gstatic.com/generate_204
+    interval: 1800
+    tolerance: 100
+    lazy: true
+
+  - name: "🚀 一分机场"
+    type: select
+    proxies:
+      - "🚀 一分机场自动"
+      - DIRECT
+    use:
+      - cheap
+
+  - name: "🤖 AI 美国自动"
+    type: url-test
+    use:
+      - premium_ai
+    filter: '^(\[2x\]🇺🇸美国01丨中转⁴|\[3x\]🇺🇸美国01丨IX|\[2x\]🇺🇸美国02丨中转⁴|\[3x\]🇺🇸美国03丨IX|\[4x\]🇺🇸美国04\|家宽 |中转⁴)$'
+    url: https://www.gstatic.com/generate_204
+    interval: 1800
+    tolerance: 100
+    lazy: true
+
+  - name: "🤖 AI 服务"
+    type: select
+    proxies:
+      - "🤖 AI 美国自动"
+
+rules:
+  - 'GEOSITE,openai,🤖 AI 服务'
+  - 'DOMAIN-SUFFIX,openai.com,🤖 AI 服务'
+  - 'DOMAIN-SUFFIX,chatgpt.com,🤖 AI 服务'
+  - 'DOMAIN-SUFFIX,oaistatic.com,🤖 AI 服务'
+  - 'DOMAIN-SUFFIX,oaiusercontent.com,🤖 AI 服务'
+  - 'DOMAIN-SUFFIX,auth.openai.com,🤖 AI 服务'
+
+  - GEOSITE,private,DIRECT
+  - GEOIP,private,DIRECT,no-resolve
+  - IP-CIDR,10.0.0.0/8,DIRECT,no-resolve
+  - IP-CIDR,172.16.0.0/12,DIRECT,no-resolve
+  - IP-CIDR,192.168.0.0/16,DIRECT,no-resolve
+  - IP-CIDR,169.254.0.0/16,DIRECT,no-resolve
+  - IP-CIDR6,fc00::/7,DIRECT,no-resolve
+  - IP-CIDR6,fe80::/10,DIRECT,no-resolve
+  - IP-CIDR6,ff00::/8,DIRECT,no-resolve
+
+  - GEOSITE,cn,DIRECT
+  - GEOIP,CN,DIRECT,no-resolve
+  - 'MATCH,🚀 一分机场'
