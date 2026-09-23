@@ -67,7 +67,6 @@ rules:
   - 'DOMAIN-SUFFIX,auth.openai.com,🤖 AI 服务'
 
   - GEOSITE,private,DIRECT
-  - GEOIP,private,DIRECT,no-resolve
   - IP-CIDR,10.0.0.0/8,DIRECT,no-resolve
   - IP-CIDR,172.16.0.0/12,DIRECT,no-resolve
   - IP-CIDR,192.168.0.0/16,DIRECT,no-resolve
@@ -77,5 +76,4 @@ rules:
   - IP-CIDR6,ff00::/8,DIRECT,no-resolve
 
   - GEOSITE,cn,DIRECT
-  - GEOIP,CN,DIRECT,no-resolve
   - 'MATCH,🚀 一分机场'
