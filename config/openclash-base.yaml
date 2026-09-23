@@ -47,7 +47,7 @@ proxy-groups:
     type: url-test
     use:
       - premium_ai
-    filter: '^(\[2x\]🇺🇸美国01丨中转⁴|\[3x\]🇺🇸美国01丨IX|\[2x\]🇺🇸美国02丨中转⁴|\[3x\]🇺🇸美国03丨IX|\[4x\]🇺🇸美国04\|家宽 |中转⁴)$'
+    filter: '^(\[2x\]🇺🇸美国01丨中转⁴|\[3x\]🇺🇸美国01丨IX|\[2x\]🇺🇸美国02丨中转⁴|\[3x\]🇺🇸美国03丨IX|\[4x\]🇺🇸美国04\|家宽 \|中转⁴)$'
     url: https://www.gstatic.com/generate_204
     interval: 1800
     tolerance: 100
