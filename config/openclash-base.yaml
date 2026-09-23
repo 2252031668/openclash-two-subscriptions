@@ -13,6 +13,7 @@ proxy-providers:
     url: ""
     path: ./proxy_provider/cheap.yaml
     interval: 172800
+    proxy: DIRECT
     health-check:
       enable: false
 
@@ -21,6 +22,7 @@ proxy-providers:
     url: ""
     path: ./proxy_provider/premium_ai.yaml
     interval: 172800
+    proxy: DIRECT
     health-check:
       enable: false
 
