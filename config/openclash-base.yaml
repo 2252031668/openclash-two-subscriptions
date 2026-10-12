@@ -61,6 +61,14 @@ proxy-groups:
 
     filter: '^(?!(?:剩余流量|距离下次重置|套餐到期)).+'
 
+  - name: "🎮 Switch 商店"
+    type: select
+    proxies:
+      - "🚀 一分机场自动"
+    use:
+      - cheap
+    filter: '^(?!(?:剩余流量|距离下次重置|套餐到期)).+'
+
   - name: "🤖 AI 美国自动"
     type: url-test
     use:
@@ -83,6 +91,20 @@ rules:
   - 'DOMAIN-SUFFIX,oaistatic.com,🤖 AI 服务'
   - 'DOMAIN-SUFFIX,oaiusercontent.com,🤖 AI 服务'
   - 'DOMAIN-SUFFIX,auth.openai.com,🤖 AI 服务'
+
+  - 'DOMAIN-SUFFIX,eshop.nintendo.net,🎮 Switch 商店'
+  - 'DOMAIN-SUFFIX,hac.shop.nintendo.net,🎮 Switch 商店'
+  - 'DOMAIN-SUFFIX,accounts.nintendo.com,🎮 Switch 商店'
+  - 'DOMAIN-SUFFIX,ndas.srv.nintendo.net,🎮 Switch 商店'
+  - 'DOMAIN-SUFFIX,baas.nintendo.com,🎮 Switch 商店'
+  - 'DOMAIN-SUFFIX,dragons.nintendo.net,🎮 Switch 商店'
+  - 'DOMAIN,idbe-hac.cdn.nintendo.net,🎮 Switch 商店'
+  - 'DOMAIN,nemof.hac.lp1.nemo.srv.nintendo.net,🎮 Switch 商店'
+  - 'DOMAIN,atum.hac.lp1.d4c.nintendo.net,🎮 Switch 商店'
+  - 'DOMAIN,atum-eda.hac.lp1.d4c.nintendo.net,🎮 Switch 商店'
+  - 'DOMAIN,atum-4ff.hac.lp1.d4c.nintendo.net,🎮 Switch 商店'
+  - 'DOMAIN,atum-5a8.hac.lp1.d4c.nintendo.net,🎮 Switch 商店'
+  - 'DOMAIN,atum-f03.hac.lp1.d4c.nintendo.net,🎮 Switch 商店'
 
   - GEOSITE,private,DIRECT
   - IP-CIDR,120.79.120.177/32,DIRECT,no-resolve
