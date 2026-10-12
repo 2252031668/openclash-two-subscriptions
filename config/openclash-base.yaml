@@ -12,7 +12,6 @@ dns:
   ipv6: false
   enhanced-mode: fake-ip
   nameserver:
-    - 192.168.5.1
     - 223.5.5.5
     - 119.29.29.29
   direct-nameserver:
@@ -48,9 +47,9 @@ proxy-groups:
       - cheap
     filter: '^(🇯🇵日本专线-0\.1倍率|🇯🇵日本专线2-0\.1倍率|🇯🇵日本专线3-0\.1倍率|🇺🇸美国凤凰城专线-0\.1倍率|🇺🇸美国凤凰城专线2-0\.1倍率|🇺🇸美国凤凰城专线3-0\.1倍率|🇺🇸美国ai解锁-0\.1倍率|🇺🇸美国纽约-0\.01倍率|🇸🇬新加坡专线|🇸🇬新加坡专线2|🇸🇬新加坡专线3|🇭🇰香港家宽专线)$'
     url: https://www.gstatic.com/generate_204
-    interval: 1800
+    interval: 180
     tolerance: 100
-    lazy: true
+    lazy: false
 
   - name: "🚀 一分机场"
     type: select
@@ -66,9 +65,9 @@ proxy-groups:
       - premium_ai
     filter: '^(\[2x\]🇺🇸美国01丨中转⁴|\[3x\]🇺🇸美国01丨IX|\[2x\]🇺🇸美国02丨中转⁴|\[3x\]🇺🇸美国03丨IX|\[4x\]🇺🇸美国04\|家宽 \|中转⁴)$'
     url: https://www.gstatic.com/generate_204
-    interval: 1800
+    interval: 300
     tolerance: 100
-    lazy: true
+    lazy: false
 
   - name: "🤖 AI 服务"
     type: select
